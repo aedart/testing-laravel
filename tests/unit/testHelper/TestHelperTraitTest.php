@@ -61,6 +61,19 @@ class TestHelperTraitTest extends \Codeception\TestCase\Test
      *
      * @covers ::setUp
      */
+    public function doNothingInSetUp(){
+        $trait = $this->getTraitMock();
+
+        $trait->setUp();
+
+        $this->assertFalse($trait->hasApplicationBeenStarted());
+    }
+
+    /**
+     * @test
+     *
+     * @covers ::setUp
+     */
     public function storeSomethingInSession(){
         $trait = $this->getTraitMock();
         $trait->startApplication();
