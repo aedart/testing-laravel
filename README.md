@@ -36,6 +36,7 @@ In the below stated example, a codeception's unit test (extends PHP Unit) is bei
 
 ```
 #!php
+<?php
 use Aedart\Testing\Laravel\Traits\TestHelperTrait;
 
 class MyUnitTest extends \Codeception\TestCase\Test
@@ -105,6 +106,7 @@ When using the `TestHelperTrait`, all of the Orchestral's TestCase methods are a
 
 ```
 #!php
+<?php
 use Aedart\Testing\Laravel\Traits\ApplicationInitiatorTrait;
 
 class MyUnitTest extends \Codeception\TestCase\Test
