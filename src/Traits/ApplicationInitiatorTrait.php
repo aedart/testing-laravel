@@ -61,4 +61,17 @@ trait ApplicationInitiatorTrait {
         }
         return false;
     }
+
+    /**
+     * Define environment setup.
+     *
+     * @param  \Illuminate\Foundation\Application   $app
+     *
+     * @return void
+     *
+     * @see \Orchestra\Testbench\Traits\ApplicationTrait
+     */
+    protected function getEnvironmentSetUp($app){
+        // Define your environment setup.
+    }
 }
