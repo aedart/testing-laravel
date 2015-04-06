@@ -1,0 +1,35 @@
+{
+    "name": "aedart/testing-laravel",
+    "description": "Utilities that allows you to test Laravel dependent packages. At its core, this package is a wrapper for the Orchestral Testbench. However, you can make use of this with whatever testing framework you wish; it does not impose you to use neither Orchestral's nor Laravel's TestCase classes.",
+    "keywords": [
+        "Testing",
+        "Laravel",
+        "Orchestral"
+    ],
+    "homepage": "https://bitbucket.org/aedart/testing-laravel",
+    "license": "BSD-3-Clause",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alin Eugen Deac",
+            "email": "aedart@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "aedart/license": "1.*",
+        "aedart/license-file-manager": "1.*",
+        "codeception/codeception": "2.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aedart\\Testing\\Laravel\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "post-update-cmd": "php vendor/bin/license-manager license:copy vendor/aedart/license/aedart/model/BSD-3-Clause"
+    }
+}
