@@ -54,20 +54,23 @@ class TestHelperTraitTest extends \Codeception\TestCase\Test
      * Tests
      *****************************************************************************/
 
-    /**
-     * @test
-     *
-     * NOTE: the setUp covered here doesn't do anything at all!
-     *
-     * @covers ::setUp
-     */
-    public function doNothingInSetUp(){
-        $trait = $this->getTraitMock();
-
-        $trait->setUp();
-
-        $this->assertFalse($trait->hasApplicationBeenStarted());
-    }
+    // Defect - when a codeception unit test class uses the trait, then
+    // the setUp method is automatically implemented by codeception. Thus,
+    // using this method can cause issues
+//    /**
+//     * @test
+//     *
+//     * NOTE: the setUp covered here doesn't do anything at all!
+//     *
+//     * @covers ::setUp
+//     */
+//    public function doNothingInSetUp(){
+//        $trait = $this->getTraitMock();
+//
+//        $trait->setUp();
+//
+//        $this->assertFalse($trait->hasApplicationBeenStarted());
+//    }
 
     /**
      * @test

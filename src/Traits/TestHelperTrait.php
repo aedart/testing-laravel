@@ -17,6 +17,9 @@ trait TestHelperTrait {
     use ApplicationInitiatorTrait, ClientTrait, PHPUnitAssertionsTrait;
 
     /**
+     * <b>DEFECT</b> - if used with codeception, this method should already be
+     * implemented
+     *
      * <b>Override</b>
      *
      * Setup the test environment.
@@ -29,8 +32,8 @@ trait TestHelperTrait {
      *
      * @see startApplication()
      */
-    public function setUp(){
-        // N/A - Does nothing in this implementation...
-    }
+//    public function setUp(){
+//        // N/A - Does nothing in this implementation...
+//    }
 
 }
