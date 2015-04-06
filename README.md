@@ -1,7 +1,7 @@
 ## Testing-Laravel ##
 
 Utilities that allows you to test Laravel dependent packages. At its core, this package is a wrapper for the Orchestral Testbench.
-However, you can make use of this with whatever testing framework you wish; it does not impose you to use neither Orchestral's nor Laravel's TestCase classes.
+However, you can make use of this with whatever testing framework you wish; it does not force you to use neither Orchestral's nor Laravel's TestCase classes.
 
 
 ## Contents ##
