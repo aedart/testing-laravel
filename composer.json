@@ -22,7 +22,8 @@
     "require-dev": {
         "aedart/license": "1.*",
         "aedart/license-file-manager": "1.*",
-        "codeception/codeception": "2.0.*"
+        "codeception/codeception": "2.0.*",
+        "fzaninotto/faker": "1.5.*@dev"
     },
     "autoload": {
         "psr-4": {
