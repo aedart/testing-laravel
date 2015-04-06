@@ -4,7 +4,7 @@ use Orchestra\Testbench\TestCaseInterface;
 /**
  * Interface Test Helper
  *
- * A test helper is basically a wrapper for the utility methods offered by Orchestra Testbench.
+ * A test helper is basically a wrapper for the utility methods offered by Orchestral Testbench.
  * However, the application (Laravel) itself, is not automatically started - this has to be done
  * manually, when it is desired to be used.
  *
