@@ -6,7 +6,7 @@ use Orchestra\Testbench\Traits\ApplicationTrait;
 /**
  * Trait Application Initiator
  *
- * @see IApplicationInitiator
+ * @see \Aedart\Testing\Laravel\Interfaces\IApplicationInitiator
  *
  * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Testing\Laravel\Traits
