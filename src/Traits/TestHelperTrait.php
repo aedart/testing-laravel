@@ -1,8 +1,8 @@
 <?php  namespace Aedart\Testing\Laravel\Traits; 
 
 use Aedart\Testing\Laravel\Traits\ApplicationInitiatorTrait;
-use Orchestra\Testbench\Traits\ClientTrait;
-use Orchestra\Testbench\Traits\PHPUnitAssertionsTrait;
+use Illuminate\Foundation\Testing\CrawlerTrait;
+use Illuminate\Foundation\Testing\AssertionsTrait;
 
 /**
  * Trait Test Helper
@@ -14,7 +14,7 @@ use Orchestra\Testbench\Traits\PHPUnitAssertionsTrait;
  */
 trait TestHelperTrait {
 
-    use ApplicationInitiatorTrait, ClientTrait, PHPUnitAssertionsTrait;
+    use ApplicationInitiatorTrait, CrawlerTrait, AssertionsTrait;
 
     /**
      * <b>DEFECT</b> - if used with codeception, this method should already be
