@@ -14,7 +14,15 @@ When you wish to test Laravel specific components and packages
 
 ## How to install ##
 
-For Orchestral Testbench version 3.0.x / Laravel 5.0.x
+### For Orchestral Testbench version 3.1.x / Laravel 5.1.x ###
+
+```
+#!console
+
+composer require aedart/testing-laravel 1.1.*
+```
+
+### For Orchestral Testbench version 3.0.x / Laravel 5.0.x ###
 
 ```
 #!console
