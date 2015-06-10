@@ -1,7 +1,9 @@
 <?php  namespace Aedart\Testing\Laravel\Traits; 
 
 use Aedart\Testing\Laravel\Exceptions\ApplicationRunningException;
+use Illuminate\Database\Eloquent\Factory;
 use Orchestra\Testbench\Traits\ApplicationTrait;
+use Illuminate\Foundation\Testing\ApplicationTrait as FoundationTrait;
 
 /**
  * Trait Application Initiator
@@ -13,7 +15,34 @@ use Orchestra\Testbench\Traits\ApplicationTrait;
  */
 trait ApplicationInitiatorTrait {
 
-    use ApplicationTrait;
+    use FoundationTrait, ApplicationTrait;
+
+    /**
+     * The base URL to use while testing the application.
+     *
+     * @see \Orchestra\Testbench\TestCase
+     *
+     * @var string
+     */
+    protected $baseUrl = 'http://localhost';
+
+    /**
+     * The Eloquent factory instance.
+     *
+     * @see \Orchestra\Testbench\TestCase
+     *
+     * @var \Illuminate\Database\Eloquent\Factory
+     */
+    protected $factory;
+
+    /**
+     * The callbacks that should be run before the application is destroyed.
+     *
+     * @see \Orchestra\Testbench\TestCase
+     *
+     * @var array
+     */
+    protected $beforeApplicationDestroyedCallbacks = [];
 
     /**
      * Start the application
@@ -26,7 +55,12 @@ trait ApplicationInitiatorTrait {
         if($this->hasApplicationBeenStarted()){
             throw new ApplicationRunningException(sprintf('Application has already been started. Please stop the application, before invoking start!'));
         }
+
         $this->refreshApplication();
+
+        if(! $this->factory) {
+            $this->factory = $this->app->make(Factory::class);
+        }
     }
 
     /**
@@ -36,6 +70,10 @@ trait ApplicationInitiatorTrait {
      */
     public function stopApplication(){
         if($this->hasApplicationBeenStarted()){
+            foreach ($this->beforeApplicationDestroyedCallbacks as $callback) {
+                call_user_func($callback);
+            }
+
             $this->app->flush();
             $this->app = null;
         }
@@ -69,9 +107,23 @@ trait ApplicationInitiatorTrait {
      *
      * @return void
      *
-     * @see \Orchestra\Testbench\Traits\ApplicationTrait
+     * @see \Orchestra\Testbench\TestCase
      */
     protected function getEnvironmentSetUp($app){
         // Define your environment setup.
+    }
+
+    /**
+     * Register a callback to be run before the application is destroyed.
+     *
+     * @see \Orchestra\Testbench\TestCase
+     *
+     * @param  callable  $callback
+     *
+     * @return void
+     */
+    protected function beforeApplicationDestroyed(callable $callback)
+    {
+        $this->beforeApplicationDestroyedCallbacks[] = $callback;
     }
 }
