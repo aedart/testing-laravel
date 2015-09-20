@@ -1,6 +1,7 @@
 <?php  namespace Aedart\Testing\Laravel\Traits; 
 
 use Aedart\Testing\Laravel\Exceptions\ApplicationRunningException;
+use Illuminate\Support\Facades\Facade;
 use Orchestra\Testbench\Traits\ApplicationTrait;
 use Illuminate\Foundation\Testing\ApplicationTrait as FoundationTrait;
 
@@ -39,6 +40,9 @@ trait ApplicationInitiatorTrait {
         if($this->hasApplicationBeenStarted()){
             $this->app->flush();
             $this->app = null;
+
+            Facade::clearResolvedInstances();
+            Facade::setFacadeApplication(null);
         }
     }
 
