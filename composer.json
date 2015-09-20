@@ -17,13 +17,14 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "orchestra/testbench": "3.0.*"
+        "orchestra/testbench": "~3.1",
+        "codeception/codeception": "~2.1",
+        "fzaninotto/faker": "~1.5",
+        "mockery/mockery": "~0.9"
     },
     "require-dev": {
         "aedart/license": "1.*",
-        "aedart/license-file-manager": "1.*",
-        "codeception/codeception": "2.0.*",
-        "fzaninotto/faker": "1.5.*@dev"
+        "aedart/license-file-manager": "1.*"
     },
     "autoload": {
         "psr-4": {

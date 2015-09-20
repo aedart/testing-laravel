@@ -46,7 +46,7 @@ class TestHelperTraitTest extends \Codeception\TestCase\Test
      * @return PHPUnit_Framework_MockObject_MockObject|Aedart\Testing\Laravel\Interfaces\ITestHelper
      */
     protected function getTraitMock(){
-        $m = $this->getMockForTrait('Aedart\Testing\Laravel\Traits\TestHelperTrait');
+        $m = $this->getMockForTrait(TestHelperTrait::class);
         return $m;
     }
 

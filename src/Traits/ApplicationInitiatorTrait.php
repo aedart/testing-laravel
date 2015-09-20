@@ -2,6 +2,7 @@
 
 use Aedart\Testing\Laravel\Exceptions\ApplicationRunningException;
 use Orchestra\Testbench\Traits\ApplicationTrait;
+use Illuminate\Foundation\Testing\ApplicationTrait as FoundationTrait;
 
 /**
  * Trait Application Initiator
@@ -13,7 +14,7 @@ use Orchestra\Testbench\Traits\ApplicationTrait;
  */
 trait ApplicationInitiatorTrait {
 
-    use ApplicationTrait;
+    use ApplicationTrait, FoundationTrait;
 
     /**
      * Start the application

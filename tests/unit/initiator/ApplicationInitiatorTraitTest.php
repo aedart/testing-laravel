@@ -34,7 +34,7 @@ class ApplicationInitiatorTraitTest extends \Codeception\TestCase\Test
      * @return PHPUnit_Framework_MockObject_MockObject|Aedart\Testing\Laravel\Interfaces\IApplicationInitiator
      */
     protected function getTraitMock(){
-        $m = $this->getMockForTrait('Aedart\Testing\Laravel\Traits\ApplicationInitiatorTrait');
+        $m = $this->getMockForTrait(ApplicationInitiatorTrait::class);
         return $m;
     }
 
