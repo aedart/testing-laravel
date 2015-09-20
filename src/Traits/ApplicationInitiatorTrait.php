@@ -1,6 +1,8 @@
 <?php  namespace Aedart\Testing\Laravel\Traits; 
 
 use Aedart\Testing\Laravel\Exceptions\ApplicationRunningException;
+use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\Facades\Facade;
 use Orchestra\Testbench\Traits\ApplicationTrait;
 use Illuminate\Foundation\Testing\ApplicationTrait as FoundationTrait;
 
@@ -14,7 +16,7 @@ use Illuminate\Foundation\Testing\ApplicationTrait as FoundationTrait;
  */
 trait ApplicationInitiatorTrait {
 
-    use ApplicationTrait;
+    use ApplicationTrait, FoundationTrait;
 
     /**
      * The base URL to use while testing the application.
