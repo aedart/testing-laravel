@@ -1,5 +1,6 @@
 <?php namespace Aedart\Testing\Laravel\TestCases\unit;
 
+use Codeception\Util\Debug;
 use PHPUnit_Framework_MockObject_MockObject;
 
 /**
@@ -141,6 +142,8 @@ abstract class GetterSetterTraitTestCase extends UnitTestCase{
      * @param mixed $customDefaultValue
      */
     public function assertGetterSetterTraitMethods($valueToSetAndObtain, $customDefaultValue) {
+        Debug::debug('Asserting ' . $this->getTraitClassPath());
+
         $traitMock = $this->getTraitMock();
 
         // Ensures that no default value has been set (by default)
@@ -170,6 +173,8 @@ abstract class GetterSetterTraitTestCase extends UnitTestCase{
      * @param string $failMessage
      */
     public function assertHasNoDefaultValue(PHPUnit_Framework_MockObject_MockObject $traitMock, $hasDefaultPropertyMethodName, $failMessage = 'Should not contain default value') {
+        Debug::debug(' - ' . $hasDefaultPropertyMethodName . '()');
+
         $this->assertFalse($traitMock->$hasDefaultPropertyMethodName(), $failMessage);
     }
 
@@ -182,6 +187,8 @@ abstract class GetterSetterTraitTestCase extends UnitTestCase{
      * @param string $failMessage
      */
     public function assertDefaultValueIsNull(PHPUnit_Framework_MockObject_MockObject $traitMock, $getDefaultPropertyMethodName, $failMessage = 'Default value should be null') {
+        Debug::debug(' - ' . $getDefaultPropertyMethodName . '()');
+
         $this->assertNull($traitMock->$getDefaultPropertyMethodName(), $failMessage);
     }
 
@@ -194,6 +201,8 @@ abstract class GetterSetterTraitTestCase extends UnitTestCase{
      * @param string $failMessage
      */
     public function assertHasNoValue(PHPUnit_Framework_MockObject_MockObject $traitMock, $hasPropertyMethodName, $failMessage = 'Should not have a value set') {
+        Debug::debug(' - ' . $hasPropertyMethodName . '()');
+
         $this->assertFalse($traitMock->$hasPropertyMethodName(), $failMessage);
     }
 
@@ -215,7 +224,11 @@ abstract class GetterSetterTraitTestCase extends UnitTestCase{
         $value,
         $failMessage = 'Incorrect value obtained'
     ){
+        Debug::debug(' - ' . $setPropertyMethodName . '(' . $value .')');
+
         $traitMock->$setPropertyMethodName($value);
+
+        Debug::debug(' - ' . $getPropertyMethodName . '()');
 
         $this->assertSame($value, $traitMock->$getPropertyMethodName(), $failMessage);
     }
@@ -238,6 +251,8 @@ abstract class GetterSetterTraitTestCase extends UnitTestCase{
         $defaultValue,
         $failMessage = 'Incorrect default value returned'
     ){
+        Debug::debug(' - mocking ' . $getDefaultPropertyMethodName  . '(), must return; ' . $defaultValue);
+
         $traitMock = $this->getTraitMock($traitClassPath, [
             $getDefaultPropertyMethodName
         ]);
@@ -245,6 +260,8 @@ abstract class GetterSetterTraitTestCase extends UnitTestCase{
         $traitMock->expects($this->any())
             ->method($getDefaultPropertyMethodName)
             ->willReturn($defaultValue);
+
+        Debug::debug(' - ' . $getPropertyMethodName . '()');
 
         $this->assertSame($defaultValue, $traitMock->$getPropertyMethodName(), $failMessage);
     }
