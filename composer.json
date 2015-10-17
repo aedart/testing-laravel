@@ -6,7 +6,7 @@
         "Laravel",
         "Orchestral"
     ],
-    "homepage": "https://bitbucket.org/aedart/testing-laravel",
+    "homepage": "https://github.com/aedart/testing-laravel",
     "license": "BSD-3-Clause",
     "type": "library",
     "authors": [
@@ -24,7 +24,7 @@
     },
     "require-dev": {
         "aedart/license": "1.*",
-        "aedart/license-file-manager": "1.*"
+        "aedart/license-file-manager": "~1.4"
     },
     "autoload": {
         "psr-4": {

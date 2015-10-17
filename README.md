@@ -1,59 +1,63 @@
-## Testing-Laravel ##
+[![Latest Stable Version](https://poser.pugx.org/aedart/testing-laravel/v/stable)](https://packagist.org/packages/aedart/testing-laravel)
+[![Total Downloads](https://poser.pugx.org/aedart/testing-laravel/downloads)](https://packagist.org/packages/aedart/testing-laravel)
+[![Latest Unstable Version](https://poser.pugx.org/aedart/testing-laravel/v/unstable)](https://packagist.org/packages/aedart/testing-laravel)
+[![License](https://poser.pugx.org/aedart/testing-laravel/license)](https://packagist.org/packages/aedart/testing-laravel)
+
+# Testing-Laravel
 
 Utilities that allows you to test Laravel dependent packages. At its core, this package is a wrapper for the Orchestral Testbench.
 However, you can make use of this with whatever testing framework you wish; it does not force you to use neither Orchestral's nor Laravel's TestCase classes.
 
+# Contents
 
-## Contents ##
+* [When to use this](#when-to-use-this)
+* [How to install](#how-to-install)
+* [Quick start](#quick-start)
+* [Acknowledgement](#acknowledgement)
+* [License](#license)
 
-[TOC]
-
-## When to use this ##
+## When to use this
 
 When you wish to test Laravel specific components and packages
 
-## How to install ##
+## How to install
 
-### For Orchestral Testbench version 3.1.x / Laravel 5.1.11+ ###
+### For Orchestral Testbench version 3.1.x / Laravel 5.1.11+
 
-```
-#!console
+```console
 
 composer require aedart/testing-laravel 1.2.*
 ```
 
-### For Orchestral Testbench version 3.1.x / Laravel 5.1.x ###
+### For Orchestral Testbench version 3.1.x / Laravel 5.1.x
 
-```
-#!console
+```console
 
 composer require aedart/testing-laravel 1.1.*
 ```
 
-### For Orchestral Testbench version 3.0.x / Laravel 5.0.x ###
+### For Orchestral Testbench version 3.0.x / Laravel 5.0.x
 
-```
-#!console
+```console
 
 composer require aedart/testing-laravel 1.0.*
 ```
 
 This package uses [composer](https://getcomposer.org/). If you do not know what that is or how it works, I recommend that you read a little about, before attempting to use this package.
 
-## Quick start ##
+## Quick start
 
-### Assumptions / Prerequisite ###
+### Assumptions / Prerequisite
 
 You have some experience using [Laravel](http://laravel.com/)
 
 You are using some kind of PHP unit test framework, e.g. [PHPUnit](https://phpunit.de/), [Codeception](http://codeception.com/), ...etc
 
-### Using TestHelperTrait (Full Orchestral implementation) ###
+### Using TestHelperTrait (Full Orchestral implementation)
 
 In the below stated example, a codeception's unit test (extends PHP Unit) is being used
 
-```
-#!php
+```php
 <?php
 use Aedart\Testing\Laravel\Traits\TestHelperTrait;
 
@@ -120,10 +124,9 @@ class MyUnitTest extends \Codeception\TestCase\Test
 
 When using the `TestHelperTrait`, all of the Orchestral's TestCase methods are available
 
-### Using ApplicationInitiatorTrait (minimal implementation) ###
+### Using ApplicationInitiatorTrait (minimal implementation)
 
-```
-#!php
+```php
 <?php
 use Aedart\Testing\Laravel\Traits\ApplicationInitiatorTrait;
 
@@ -174,12 +177,12 @@ class MyUnitTest extends \Codeception\TestCase\Test
 
 When using the `ApplicationInitiatorTrait`, __none__ of Orchestral's TestCase methods are available
 
-## Acknowledgement ##
+## Acknowledgement
 
 [Mior Muhammad Zaki](https://github.com/orchestral/testbench) for a good alternative way of testing Laravel specific components and packages. 
 
 [Taylor Otwell et al.](http://laravel.com/) for one of the best PHP frameworks ever created.
 
-## License ##
+## License
 
 [BSD-3-Clause](http://spdx.org/licenses/BSD-3-Clause), Read the LICENSE file included in this package
