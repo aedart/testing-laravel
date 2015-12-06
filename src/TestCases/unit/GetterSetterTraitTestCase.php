@@ -224,7 +224,11 @@ abstract class GetterSetterTraitTestCase extends UnitTestCase{
         $value,
         $failMessage = 'Incorrect value obtained'
     ){
-        Debug::debug(' - ' . $setPropertyMethodName . '(' . var_export($value, true) .')');
+        if(is_object($value)){
+            Debug::debug(' - ' . $setPropertyMethodName . '(' . get_class($value) .')');
+        } else {
+            Debug::debug(' - ' . $setPropertyMethodName . '(' . var_export($value, true) .')');
+        }
 
         $traitMock->$setPropertyMethodName($value);
 
@@ -251,7 +255,11 @@ abstract class GetterSetterTraitTestCase extends UnitTestCase{
         $defaultValue,
         $failMessage = 'Incorrect default value returned'
     ){
-        Debug::debug(' - mocking ' . $getDefaultPropertyMethodName  . '(), must return; ' . var_export($defaultValue, true));
+        if(is_object($defaultValue)){
+            Debug::debug(' - mocking ' . $getDefaultPropertyMethodName  . '(), must return; ' . get_class($defaultValue));
+        } else {
+            Debug::debug(' - mocking ' . $getDefaultPropertyMethodName  . '(), must return; ' . var_export($defaultValue, true));
+        }
 
         $traitMock = $this->getTraitMock($traitClassPath, [
             $getDefaultPropertyMethodName
