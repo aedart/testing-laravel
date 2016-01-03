@@ -2,9 +2,9 @@
 
 use Aedart\Testing\Laravel\Exceptions\ApplicationRunningException;
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
 use Orchestra\Testbench\Traits\ApplicationTrait;
-use Illuminate\Foundation\Testing\ApplicationTrait as FoundationTrait;
 
 /**
  * Trait Application Initiator
@@ -16,7 +16,14 @@ use Illuminate\Foundation\Testing\ApplicationTrait as FoundationTrait;
  */
 trait ApplicationInitiatorTrait {
 
-    use ApplicationTrait, FoundationTrait;
+    use ApplicationTrait;
+
+    /**
+     * Instance of the Laravel Application
+     *
+     * @var Application
+     */
+    protected $app = null;
 
     /**
      * The base URL to use while testing the application.
@@ -81,6 +88,17 @@ trait ApplicationInitiatorTrait {
             Facade::clearResolvedInstances();
             Facade::setFacadeApplication(null);
         }
+    }
+
+    /**
+     * Refresh the application instance.
+     *
+     * @return void
+     */
+    protected function refreshApplication(){
+        putenv('APP_ENV=testing');
+
+        $this->app = $this->createApplication();
     }
 
     /**
