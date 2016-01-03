@@ -22,6 +22,13 @@ When you wish to test Laravel specific components and packages
 
 ## How to install
 
+### For Orchestral Testbench version 3.2.x / Laravel 5.2.x
+
+```console
+
+composer require aedart/testing-laravel 1.6.*
+```
+
 ### For Orchestral Testbench version 3.1.x / Laravel 5.1.11+
 
 ```console
