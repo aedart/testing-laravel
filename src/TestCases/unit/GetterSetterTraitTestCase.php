@@ -4,6 +4,8 @@ use Codeception\Util\Debug;
 use PHPUnit_Framework_MockObject_MockObject;
 
 /**
+ * @deprecated Since 2.0, use aedart/testing-gst package instead
+ *
  * <h1>Getter / Setter Trait TestCase</h1>
  *
  * Highly specialised test-case for so called "getter-setter" traits,
