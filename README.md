@@ -22,33 +22,23 @@ When you wish to test Laravel specific components and packages
 
 ## How to install
 
+### For Orchestral Testbench version 3.3.x / Laravel 5.3.x
+
+```console
+composer require aedart/testing-laravel 1.8.*
+```
+
 ### For Orchestral Testbench version 3.2.x / Laravel 5.2.x
 
 ```console
-
-composer require aedart/testing-laravel 1.6.*
+composer require aedart/testing-laravel 1.7.*
 ```
 
-### For Orchestral Testbench version 3.1.x / Laravel 5.1.11+
+### For Laravel 5.1 and 5.0
 
-```console
+Not supported
 
-composer require aedart/testing-laravel 1.2.*
-```
-
-### For Orchestral Testbench version 3.1.x / Laravel 5.1.x
-
-```console
-
-composer require aedart/testing-laravel 1.1.*
-```
-
-### For Orchestral Testbench version 3.0.x / Laravel 5.0.x
-
-```console
-
-composer require aedart/testing-laravel 1.0.*
-```
+-----------------
 
 This package uses [composer](https://getcomposer.org/). If you do not know what that is or how it works, I recommend that you read a little about, before attempting to use this package.
 
