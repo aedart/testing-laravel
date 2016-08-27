@@ -1,10 +1,10 @@
 <?php namespace Aedart\Testing\Laravel\TestCases\unit;
 
-use Codeception\TestCase\Test;
-use Faker\Factory;
-use \Mockery as m;
+use Aedart\Testing\TestCases\Unit\UnitTestCase as BaseUnitTestCase;
 
 /**
+ * @deprecated Since 2.0, use \Aedart\Testing\TestCases\Unit\UnitTestCase instead
+ *
  * <h1>Unit TestCase</h1>
  *
  * Base test-case for codeception unit tests.
@@ -12,29 +12,7 @@ use \Mockery as m;
  * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Testing\Laravel\TestCases\unit
  */
-abstract class UnitTestCase extends Test{
+abstract class UnitTestCase extends BaseUnitTestCase
+{
 
-    /**
-     * @var \UnitTester
-     */
-    protected $tester;
-
-    /**
-     * @var \Faker\Generator
-     */
-    protected $faker = null;
-
-    protected function _before()
-    {
-        $this->faker = Factory::create();
-    }
-
-    protected function _after()
-    {
-        m::close();
-    }
-
-    /***********************************************************
-     * Helpers and utilities
-     **********************************************************/
 }
