@@ -3,6 +3,8 @@
 use Codeception\TestCase\Test;
 
 /**
+ * @deprecated Will be removed in version 3.0
+ *
  * <h1>Interface And Trait Compatibility TestCase</h1>
  *
  * Base class for a special kind of integration tests, in which we
