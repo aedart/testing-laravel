@@ -1,4 +1,7 @@
-<?php  namespace Aedart\Testing\Laravel\Interfaces;
+<?php
+
+namespace Aedart\Testing\Laravel\Interfaces;
+
 use Aedart\Testing\Laravel\Exceptions\ApplicationRunningException;
 
 /**
@@ -10,7 +13,8 @@ use Aedart\Testing\Laravel\Exceptions\ApplicationRunningException;
  * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Testing\Laravel\Interfaces
  */
-interface IApplicationInitiator {
+interface IApplicationInitiator
+{
 
     /**
      * Start the application

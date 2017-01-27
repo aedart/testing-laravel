@@ -16,6 +16,7 @@ use Orchestra\Testbench\Contracts\TestCase as TestCaseContract;
  * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Testing\Laravel\Interfaces
  */
-interface ITestHelper extends IApplicationInitiator, TestCaseContract{
+interface ITestHelper extends IApplicationInitiator, TestCaseContract
+{
 
 }

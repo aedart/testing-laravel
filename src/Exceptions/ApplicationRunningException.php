@@ -1,4 +1,6 @@
-<?php  namespace Aedart\Testing\Laravel\Exceptions; 
+<?php namespace Aedart\Testing\Laravel\Exceptions;
+
+use RuntimeException;
 
 /**
  * Class Application Running Exception
@@ -8,6 +10,7 @@
  * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Testing\Laravel\Exceptions
  */
-class ApplicationRunningException extends \RuntimeException{
+class ApplicationRunningException extends RuntimeException
+{
 
 }

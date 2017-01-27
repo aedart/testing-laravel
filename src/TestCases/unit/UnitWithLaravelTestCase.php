@@ -14,8 +14,8 @@ use Aedart\Testing\TestCases\Unit\UnitTestCase;
  * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Testing\Laravel\TestCases\unit
  */
-abstract class UnitWithLaravelTestCase extends UnitTestCase{
-
+abstract class UnitWithLaravelTestCase extends UnitTestCase
+{
     use TestHelperTrait;
 
     protected function _before()

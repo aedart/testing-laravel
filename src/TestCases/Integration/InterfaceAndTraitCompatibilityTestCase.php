@@ -35,19 +35,12 @@ use Codeception\TestCase\Test;
  * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Testing\Laravel\TestCases\Integration
  */
-abstract class InterfaceAndTraitCompatibilityTestCase extends Test{
+abstract class InterfaceAndTraitCompatibilityTestCase extends Test
+{
     /**
      * @var \IntegrationTester
      */
     protected $tester;
-
-    protected function _before()
-    {
-    }
-
-    protected function _after()
-    {
-    }
 
     /***********************************************************
      * Helpers and utilities
@@ -91,7 +84,8 @@ abstract class InterfaceAndTraitCompatibilityTestCase extends Test{
      *
      * @test
      */
-    public function isTraitImplementationCompatibleWithInterface(){
+    public function isTraitImplementationCompatibleWithInterface()
+    {
         // Get the class path to some dummy class
         $class = $this->dummyClassPath();
 
@@ -110,10 +104,12 @@ abstract class InterfaceAndTraitCompatibilityTestCase extends Test{
         // test.
 
         // Does it implement the correct / specified interface
-        $this->assertInstanceOf($this->mustImplementInterface(), $instance, sprintf('Incorrect interface implemented by %s', $this->dummyClassPath()));
+        $this->assertInstanceOf($this->mustImplementInterface(), $instance,
+            sprintf('Incorrect interface implemented by %s', $this->dummyClassPath()));
 
         // Does it use the correct / specified trait
         $traits = class_uses($instance);
-        $this->assertContains($this->mustUseTrait(), $traits, sprintf('Incorrect trait used by %s', $this->dummyClassPath()));
+        $this->assertContains($this->mustUseTrait(), $traits,
+            sprintf('Incorrect trait used by %s', $this->dummyClassPath()));
     }
 }
