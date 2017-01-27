@@ -1,5 +1,8 @@
-<?php  namespace Aedart\Testing\Laravel\Interfaces;
-use Orchestra\Testbench\TestCaseInterface;
+<?php
+
+namespace Aedart\Testing\Laravel\Interfaces;
+
+use Orchestra\Testbench\Contracts\TestCase as TestCaseContract;
 
 /**
  * Interface Test Helper
@@ -13,6 +16,6 @@ use Orchestra\Testbench\TestCaseInterface;
  * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Testing\Laravel\Interfaces
  */
-interface ITestHelper extends IApplicationInitiator, TestCaseInterface{
+interface ITestHelper extends IApplicationInitiator, TestCaseContract{
 
 }
