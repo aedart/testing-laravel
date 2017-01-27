@@ -52,19 +52,18 @@ class MyUnitTest extends \Codeception\TestCase\Test
 
     /**
      * @test
-     *
-     * NB: Only available, when using TestHelperTrait
      */
-    public function usingOrchestralSpecificAssertions(){
+    public function readFromSession(){
         $data = [
             'myKey' => 'superSecretStuff'
         ];
 
         $this->session($data);
 
-        $this->assertSessionHasAll($data);
+        $app = $this->getApplication();
+        
+        $this->assertSame($data['myKey'], $app['session']->get('myKey'));
+
         $this->flushSession();
     }
-
-    // ... Remaining not shown ... //
 }

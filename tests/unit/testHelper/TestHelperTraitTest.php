@@ -10,8 +10,6 @@ use Faker\Factory as FakerFactory;
  * These tests is more a "proof of concept", rather than anything - just need to
  * see if Orchestra's utilities do work. By no means are all methods covered / tested.
  *
- * @coversDefaultClass Aedart\Testing\Laravel\Traits\TestHelperTrait
- *
  * @author Alin Eugen Deac <aedart@gmail.com>
  */
 class TestHelperTraitTest extends \Codeception\TestCase\Test
@@ -43,7 +41,8 @@ class TestHelperTraitTest extends \Codeception\TestCase\Test
 
     /**
      * Get mock for given trait
-     * @return PHPUnit_Framework_MockObject_MockObject|Aedart\Testing\Laravel\Interfaces\ITestHelper
+     *
+     * @return PHPUnit_Framework_MockObject_MockObject|TestHelperTrait
      */
     protected function getTraitMock(){
         $m = $this->getMockForTrait(TestHelperTrait::class);
@@ -54,28 +53,8 @@ class TestHelperTraitTest extends \Codeception\TestCase\Test
      * Tests
      *****************************************************************************/
 
-    // Defect - when a codeception unit test class uses the trait, then
-    // the setUp method is automatically implemented by codeception. Thus,
-    // using this method can cause issues
-//    /**
-//     * @test
-//     *
-//     * NOTE: the setUp covered here doesn't do anything at all!
-//     *
-//     * @covers ::setUp
-//     */
-//    public function doNothingInSetUp(){
-//        $trait = $this->getTraitMock();
-//
-//        $trait->setUp();
-//
-//        $this->assertFalse($trait->hasApplicationBeenStarted());
-//    }
-
     /**
      * @test
-     *
-     * @covers ::setUp
      */
     public function storeSomethingInSession(){
         $trait = $this->getTraitMock();
@@ -88,7 +67,11 @@ class TestHelperTraitTest extends \Codeception\TestCase\Test
         ];
         $trait->session($data);
 
-        $trait->assertSessionHasAll($data);
+        $app = $trait->getApplication();
+        foreach ($data as $key => $value){
+            $this->assertTrue($app['session']->has($key), $key . ' does not exist');
+            $this->assertSame($value, $app['session']->get($key));
+        }
 
         $trait->flushSession();
         $trait->stopApplication();
