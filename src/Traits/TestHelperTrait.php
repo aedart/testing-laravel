@@ -1,7 +1,7 @@
 <?php  namespace Aedart\Testing\Laravel\Traits; 
 
 use Aedart\Testing\Laravel\Traits\ApplicationInitiatorTrait;
-use Illuminate\Foundation\Testing\Concerns\ImpersonatesUsers;
+use Illuminate\Foundation\Testing\Concerns\InteractsWithAuthentication;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithConsole;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithContainer;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase;
@@ -20,15 +20,15 @@ use Orchestra\Testbench\Traits\WithFactories;
  */
 trait TestHelperTrait {
 
-    use ApplicationInitiatorTrait,
-        InteractsWithContainer,
-        MakesHttpRequests,
-        ImpersonatesUsers,
-        InteractsWithConsole,
-        InteractsWithDatabase,
-        InteractsWithSession,
-        MocksApplicationServices,
-        WithFactories;
+    use ApplicationInitiatorTrait;
+    use InteractsWithContainer;
+    use MakesHttpRequests;
+    use InteractsWithAuthentication;
+    use InteractsWithConsole;
+    use InteractsWithDatabase;
+    use InteractsWithSession;
+    use MocksApplicationServices;
+    use WithFactories;
 
     /**
      * <b>DEFECT</b> - if used with codeception, this method should already be
