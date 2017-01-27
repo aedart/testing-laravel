@@ -66,4 +66,6 @@ class MyUnitTest extends \Codeception\TestCase\Test
 
         $this->flushSession();
     }
+
+    // ... remaining not shown ... //
 }
