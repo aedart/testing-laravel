@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": ">=5.6.4",
-        "orchestra/testbench": "3.3.*",
+        "orchestra/testbench": "3.4.*",
         "aedart/testing": "~1.0"
     },
     "require-dev": {
@@ -29,7 +29,7 @@
             "Aedart\\Testing\\Laravel\\": "src/"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "scripts": {
         "post-update-cmd": "vendor/bin/license-manager license:copy vendor/aedart/license/aedart/BSD-3-Clause"
     }
