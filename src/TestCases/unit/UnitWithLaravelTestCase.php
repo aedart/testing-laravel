@@ -1,6 +1,7 @@
 <?php namespace Aedart\Testing\Laravel\TestCases\unit;
 
 use Aedart\Testing\Laravel\Traits\TestHelperTrait;
+use Aedart\Testing\TestCases\Unit\UnitTestCase;
 
 /**
  * <h1>Unit TestCase - With Laravel</h1>
