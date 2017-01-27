@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/aedart/testing-laravel.svg?branch=master)](https://travis-ci.org/aedart/testing-laravel)
 [![Latest Stable Version](https://poser.pugx.org/aedart/testing-laravel/v/stable)](https://packagist.org/packages/aedart/testing-laravel)
 [![Total Downloads](https://poser.pugx.org/aedart/testing-laravel/downloads)](https://packagist.org/packages/aedart/testing-laravel)
 [![Latest Unstable Version](https://poser.pugx.org/aedart/testing-laravel/v/unstable)](https://packagist.org/packages/aedart/testing-laravel)
