@@ -16,9 +16,9 @@
         }
     ],
     "require": {
-        "php": ">=5.6.4",
-        "orchestra/testbench": "3.4.*",
-        "aedart/testing": "~1.0"
+        "php": ">=7.1.0",
+        "orchestra/testbench": "3.5.*",
+        "aedart/testing": "~2.0"
     },
     "require-dev": {
         "aedart/license": "1.*",
@@ -36,7 +36,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.1.x-dev"
+            "dev-master": "3.0.x-dev"
         }
     }
 }
