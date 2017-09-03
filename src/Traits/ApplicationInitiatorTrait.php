@@ -9,7 +9,7 @@ use Orchestra\Testbench\Traits\CreatesApplication;
 /**
  * Trait Application Initiator
  *
- * @see \Aedart\Testing\Laravel\Interfaces\IApplicationInitiator
+ * @see \Aedart\Testing\Laravel\Contracts\ApplicationInitiator
  *
  * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Testing\Laravel\Traits
@@ -59,7 +59,7 @@ trait ApplicationInitiatorTrait
      *
      * @throws ApplicationRunningException If an application has already been started / initialised and running
      */
-    public function startApplication()
+    public function startApplication() : void
     {
         if ($this->hasApplicationBeenStarted()) {
             throw new ApplicationRunningException(sprintf('Application has already been started. Please stop the application, before invoking start!'));
@@ -77,7 +77,7 @@ trait ApplicationInitiatorTrait
      *
      * @return void
      */
-    public function stopApplication()
+    public function stopApplication() : void
     {
         if ($this->hasApplicationBeenStarted()) {
             foreach ($this->beforeApplicationDestroyedCallbacks as $callback) {
@@ -97,7 +97,7 @@ trait ApplicationInitiatorTrait
      *
      * @return void
      */
-    protected function refreshApplication()
+    protected function refreshApplication() : void
     {
         putenv('APP_ENV=testing');
 
@@ -107,9 +107,9 @@ trait ApplicationInitiatorTrait
     /**
      * Get the application instance
      *
-     * @return \Illuminate\Foundation\Application|null Instance of the application Or null if none has been started
+     * @return Application|null Instance of the application Or null if none has been started
      */
-    public function getApplication()
+    public function getApplication() : ?Application
     {
         return $this->app;
     }
@@ -119,7 +119,7 @@ trait ApplicationInitiatorTrait
      *
      * @return bool True if an application instance has been created, initialised and running. False if not.
      */
-    public function hasApplicationBeenStarted()
+    public function hasApplicationBeenStarted() : bool
     {
         if (!is_null($this->app)) {
             return true;
@@ -130,13 +130,13 @@ trait ApplicationInitiatorTrait
     /**
      * Define environment setup.
      *
-     * @param  \Illuminate\Foundation\Application $app
+     * @param  Application $app
      *
      * @return void
      *
      * @see \Orchestra\Testbench\TestCase
      */
-    protected function getEnvironmentSetUp($app)
+    protected function getEnvironmentSetUp(Application $app) : void
     {
         // Define your environment setup.
     }
@@ -150,7 +150,7 @@ trait ApplicationInitiatorTrait
      *
      * @return void
      */
-    protected function beforeApplicationDestroyed(callable $callback)
+    protected function beforeApplicationDestroyed(callable $callback) : void
     {
         $this->beforeApplicationDestroyedCallbacks[] = $callback;
     }
