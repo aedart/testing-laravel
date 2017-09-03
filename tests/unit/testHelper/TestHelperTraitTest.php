@@ -1,6 +1,5 @@
 <?php
 
-use Aedart\Testing\Laravel\Interfaces\ITestHelper;
 use Aedart\Testing\Laravel\Traits\TestHelperTrait;
 use Faker\Factory as FakerFactory;
 
