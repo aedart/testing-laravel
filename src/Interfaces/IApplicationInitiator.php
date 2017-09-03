@@ -2,9 +2,11 @@
 
 namespace Aedart\Testing\Laravel\Interfaces;
 
-use Aedart\Testing\Laravel\Exceptions\ApplicationRunningException;
+use Aedart\Testing\Laravel\Contracts\ApplicationInitiator;
 
 /**
+ * @deprecated Since 3.0, use \Aedart\Testing\Laravel\Contracts\ApplicationInitiator instead
+ *
  * Interface Application Initiator
  *
  * Components that implement this, promise that an Illuminate-Foundation-Application (Laravel application)
@@ -13,36 +15,7 @@ use Aedart\Testing\Laravel\Exceptions\ApplicationRunningException;
  * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Testing\Laravel\Interfaces
  */
-interface IApplicationInitiator
+interface IApplicationInitiator extends ApplicationInitiator
 {
 
-    /**
-     * Start the application
-     *
-     * @return void
-     *
-     * @throws ApplicationRunningException If an application has already been started / initialised and running
-     */
-    public function startApplication();
-
-    /**
-     * Stop the application
-     *
-     * @return void
-     */
-    public function stopApplication();
-
-    /**
-     * Get the application instance
-     *
-     * @return \Illuminate\Foundation\Application|null Instance of the application Or null if none has been started
-     */
-    public function getApplication();
-
-    /**
-     * Check if the application has been started
-     *
-     * @return bool True if an application instance has been created, initialised and running. False if not.
-     */
-    public function hasApplicationBeenStarted();
 }
