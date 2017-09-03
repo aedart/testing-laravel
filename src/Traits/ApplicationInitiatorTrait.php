@@ -4,7 +4,7 @@ use Aedart\Testing\Laravel\Exceptions\ApplicationRunningException;
 use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
-use Orchestra\Testbench\Traits\ApplicationTrait;
+use Orchestra\Testbench\Traits\CreatesApplication;
 
 /**
  * Trait Application Initiator
@@ -16,7 +16,7 @@ use Orchestra\Testbench\Traits\ApplicationTrait;
  */
 trait ApplicationInitiatorTrait
 {
-    use ApplicationTrait;
+    use CreatesApplication;
 
     /**
      * Instance of the Laravel Application
