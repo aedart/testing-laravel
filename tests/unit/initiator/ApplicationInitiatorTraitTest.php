@@ -1,6 +1,6 @@
 <?php
 
-use Aedart\Testing\Laravel\Interfaces\IApplicationInitiator;
+use Aedart\Testing\Laravel\Contracts\ApplicationInitiator;
 use Aedart\Testing\Laravel\Traits\ApplicationInitiatorTrait;
 
 /**
@@ -31,7 +31,7 @@ class ApplicationInitiatorTraitTest extends \Codeception\TestCase\Test
 
     /**
      * Get mock for given trait
-     * @return PHPUnit_Framework_MockObject_MockObject|Aedart\Testing\Laravel\Interfaces\IApplicationInitiator
+     * @return PHPUnit_Framework_MockObject_MockObject|ApplicationInitiator
      */
     protected function getTraitMock(){
         $m = $this->getMockForTrait(ApplicationInitiatorTrait::class);
@@ -44,11 +44,6 @@ class ApplicationInitiatorTraitTest extends \Codeception\TestCase\Test
 
     /**
      * @test
-     * @covers ::startApplication
-     * @covers ::hasApplicationBeenStarted
-     * @covers ::getApplication
-     *
-     * @covers ::getEnvironmentSetUp
      */
     public function startApplication(){
         $trait = $this->getTraitMock();
@@ -60,8 +55,6 @@ class ApplicationInitiatorTraitTest extends \Codeception\TestCase\Test
 
     /**
      * @test
-     * @covers ::startApplication
-     * @covers ::hasApplicationBeenStarted
      *
      * @expectedException \Aedart\Testing\Laravel\Exceptions\ApplicationRunningException
      */
@@ -73,10 +66,6 @@ class ApplicationInitiatorTraitTest extends \Codeception\TestCase\Test
 
     /**
      * @test
-     * @covers ::startApplication
-     * @covers ::stopApplication
-     * @covers ::hasApplicationBeenStarted
-     * @covers ::getApplication
      */
     public function stopApplication(){
         $trait = $this->getTraitMock();
