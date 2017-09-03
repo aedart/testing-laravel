@@ -13,6 +13,7 @@ However, you can make use of this with whatever testing framework you wish; it d
 
   * [When to use this](#when-to-use-this)
   * [How to install](#how-to-install)
+    + [For Orchestral Testbench version 3.5.x / Laravel 5.5.x](#for-orchestral-testbench-version-35x---laravel-55x)
     + [For Orchestral Testbench version 3.4.x / Laravel 5.4.x](#for-orchestral-testbench-version-34x---laravel-54x)
     + [For Orchestral Testbench version 3.3.x / Laravel 5.3.x](#for-orchestral-testbench-version-33x---laravel-53x)
     + [For Orchestral Testbench version 3.2.x / Laravel 5.2.x](#for-orchestral-testbench-version-32x---laravel-52x)
@@ -32,6 +33,14 @@ However, you can make use of this with whatever testing framework you wish; it d
 When you wish to test Laravel specific components and packages
 
 ## How to install
+
+### For Orchestral Testbench version 3.5.x / Laravel 5.5.x
+
+```console
+composer require aedart/testing-laravel 3.*
+```
+
+**Note:** This package requires php version 7.1 or higher
 
 ### For Orchestral Testbench version 3.4.x / Laravel 5.4.x
 
