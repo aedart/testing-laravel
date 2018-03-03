@@ -4,7 +4,7 @@ use Aedart\Testing\Laravel\Exceptions\ApplicationRunningException;
 use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
-use Orchestra\Testbench\Traits\CreatesApplication;
+use Orchestra\Testbench\Concerns\CreatesApplication;
 
 /**
  * Trait Application Initiator
