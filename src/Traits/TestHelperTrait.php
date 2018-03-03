@@ -8,9 +8,8 @@ use Illuminate\Foundation\Testing\Concerns\InteractsWithExceptionHandling;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithSession;
 use Illuminate\Foundation\Testing\Concerns\MakesHttpRequests;
 use Illuminate\Foundation\Testing\Concerns\MocksApplicationServices;
-use Orchestra\Testbench\Traits\WithFactories;
-use Orchestra\Testbench\Traits\WithLaravelMigrations;
-use Orchestra\Testbench\Traits\WithLoadMigrationsFrom;
+use Orchestra\Testbench\Concerns\WithFactories;
+use Orchestra\Testbench\Concerns\WithLaravelMigrations;
 
 /**
  * Trait Test Helper
@@ -33,5 +32,5 @@ trait TestHelperTrait
     use MocksApplicationServices;
     use WithFactories;
     use WithLaravelMigrations;
-    use WithLoadMigrationsFrom;
+    use WithLaravelMigrations;
 }
