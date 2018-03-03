@@ -10,6 +10,7 @@ use Illuminate\Foundation\Testing\Concerns\MakesHttpRequests;
 use Illuminate\Foundation\Testing\Concerns\MocksApplicationServices;
 use Orchestra\Testbench\Concerns\WithFactories;
 use Orchestra\Testbench\Concerns\WithLaravelMigrations;
+use Orchestra\Testbench\Concerns\WithLoadMigrationsFrom;
 
 /**
  * Trait Test Helper
@@ -32,5 +33,5 @@ trait TestHelperTrait
     use MocksApplicationServices;
     use WithFactories;
     use WithLaravelMigrations;
-    use WithLaravelMigrations;
+    use WithLoadMigrationsFrom;
 }
