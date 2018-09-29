@@ -1,4 +1,4 @@
-<?php  namespace Aedart\Testing\Laravel\Traits; 
+<?php  namespace Aedart\Testing\Laravel\Traits;
 
 use Illuminate\Foundation\Testing\Concerns\InteractsWithAuthentication;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithConsole;
@@ -13,6 +13,8 @@ use Orchestra\Testbench\Concerns\WithLaravelMigrations;
 use Orchestra\Testbench\Concerns\WithLoadMigrationsFrom;
 
 /**
+ * @deprecated Use \Aedart\Testing\Laravel\LaravelTestHelper, in aedart/athenaeum package
+ *
  * Trait Test Helper
  *
  * @see \Aedart\Testing\Laravel\Contracts\TestCase

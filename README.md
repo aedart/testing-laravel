@@ -4,7 +4,9 @@
 [![Latest Unstable Version](https://poser.pugx.org/aedart/testing-laravel/v/unstable)](https://packagist.org/packages/aedart/testing-laravel)
 [![License](https://poser.pugx.org/aedart/testing-laravel/license)](https://packagist.org/packages/aedart/testing-laravel)
 
-# Testing-Laravel
+# Deprecated - Testing-Laravel
+
+Package has been replaced by [aedart/athenaeum](https://github.com/aedart/athenaeum)
 
 Utilities that allows you to test Laravel dependent packages. At its core, this package is a wrapper for the Orchestral Testbench.
 However, you can make use of this with whatever testing framework you wish; it does not force you to use neither Orchestral's nor Laravel's TestCase classes.

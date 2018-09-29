@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Facade;
 use Orchestra\Testbench\Concerns\CreatesApplication;
 
 /**
+ * @deprecated Use \Aedart\Tests\Integration\Laravel\ApplicationInitiatorTest, in aedart/athenaeum package
+ *
  * Trait Application Initiator
  *
  * @see \Aedart\Testing\Laravel\Contracts\ApplicationInitiator
